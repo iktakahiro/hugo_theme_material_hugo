@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
+<h2 class="taxonomy"><span class="header-taxonomy">{{ .Data.Singular }}</span> : {{ .Title }} </h2>
 <div class="row">
-    <h2>hoge</h2>
     {{ range where .Paginator.Pages "Section" "blog" }}
         {{ .Render "li" }}
     {{ end }}

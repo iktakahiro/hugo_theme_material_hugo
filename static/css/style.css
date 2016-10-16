@@ -2064,7 +2064,7 @@ ul {
 blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #2C3E50; }
+  border-left: 5px solid #bf360c; }
 
 i {
   line-height: inherit; }
@@ -2100,7 +2100,7 @@ video.responsive-video {
   .pagination li.active a {
     color: #fff; }
   .pagination li.active {
-    background-color: #2C3E50; }
+    background-color: #bf360c; }
   .pagination li.disabled a {
     cursor: default;
     color: #999; }
@@ -2235,7 +2235,7 @@ ul.staggered-list li {
 footer.page-footer {
   margin-top: 20px;
   padding-top: 20px;
-  background-color: #2C3E50; }
+  background-color: #bf360c; }
   footer.page-footer .footer-copyright {
     overflow: hidden;
     height: 50px;
@@ -5454,7 +5454,7 @@ nav ul a span.badge {
 
 nav {
   color: #fff;
-  background-color: #2C3E50;
+  background-color: #bf360c;
   width: 100%;
   height: 56px;
   line-height: 56px; }
@@ -5901,7 +5901,7 @@ small {
     width: 15%;
     min-width: 80px; }
     .tabs .tab a {
-      color: #2C3E50;
+      color: #bf360c;
       display: block;
       width: 100%;
       height: 100%;
@@ -5909,15 +5909,15 @@ small {
       overflow: hidden;
       transition: color .28s ease; }
       .tabs .tab a:hover {
-        color: #507192; }
+        color: #f3693e; }
     .tabs .tab.disabled a {
-      color: #507192;
+      color: #f3693e;
       cursor: default; }
   .tabs .indicator {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #7997b5;
+    background-color: #f7a186;
     will-change: left, right; }
 
 .material-tooltip {
@@ -7363,7 +7363,7 @@ select {
       left: auto; } }
 .side-nav .collapsible-body li.active,
 .side-nav.fixed .collapsible-body li.active {
-  background-color: #2C3E50; }
+  background-color: #bf360c; }
   .side-nav .collapsible-body li.active a,
   .side-nav.fixed .collapsible-body li.active a {
     color: #fff; }
@@ -8520,6 +8520,10 @@ main div.ad-top {
   margin: 25px 0 0; }
 main div.ad-bottom {
   margin: 10px 0 25px; }
+main h2.taxonomy {
+  margin-left: 20px; }
+  main h2.taxonomy .header-taxonomy {
+    text-transform: capitalize; }
 
 .card-title {
   font-weight: 200 !important; }

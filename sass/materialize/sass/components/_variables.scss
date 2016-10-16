@@ -1,6 +1,5 @@
 /*** Colors ***/
-// $primary-color: color("indigo", "darken-4") !default;
-$primary-color: #2C3E50 !default;
+$primary-color: color("deep-orange", "darken-4") !default;
 $primary-color-light: lighten($primary-color, 35%) !default;
 $primary-color-dark: darken($primary-color, 35%) !default;
 
