@@ -1,0 +1,64 @@
+</main>
+
+<footer class="page-footer">
+<div class="container">
+     <div class="row">
+         <div class="col l6 s12">
+             <ul>
+                {{ range $value := .Site.Params.links }}
+                    <li><a class="grey-text text-lighten-3" href="{{ index $value 1 }}" target="{{ if index $value 2 }}{{ index $value 2}}{{ else }}_self{{ end }}">{{ index $value 0 }}</a></li>
+                {{ end }}
+             </ul>
+         </div>
+         <div class="col l4 offset-l2 s12">
+             <ul>
+             {{ with .Site.Params.twitter }}
+                 <li><a class="grey-text text-lighten-3" href="https://twitter.com/{{ . }}">Twitter</a></li>
+                    {{ end }}
+                    {{ with .Site.Params.github }}
+                 <li><a class="grey-text text-lighten-3" href="https://github.com/iktakahiro/{{ . }}">Github</a></li>
+                    {{ end }}
+                    {{ with .Site.Params.facebook }}
+                 <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/{{ . }}">Facebook</a></li>
+                    {{ end }}
+             </ul>
+         </div>
+     </div>
+     <div class="footer-copyright">
+          {{ with .Site.Copyright | safeHTML }}{{ . }}
+          {{ else }}&copy; {{ $.Site.LastChange.Year }} {{ with .Site.Params.author }}{{ . }}{{ end }}
+          {{ end }}
+            - Powered by <a class="grey-text text-lighten-4" href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme is <a href="https://github.com/iktakahiro/hugo_theme_material_hugo" class="grey-text text-lighten-4" target="_blank" rel="nofollow">Material Hugo</a>
+    </div>
+</div>
+</footer>
+
+<script type="text/javascript">
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+        'remove-trailing': true,
+        'remove-indent': true,
+        'left-trim': true,
+        'right-trim': true,
+        'remove-initial-line-feed': true
+
+    });
+    // Add className for materialize-css
+    $("table").addClass("striped");
+</script>
+
+{{ with .Site.GoogleAnalytics }}
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ . }}', 'auto');
+    ga('send', 'pageview');
+</script>
+{{ end }}
+
+<script>
+
+</script>
+</body>
+</html>

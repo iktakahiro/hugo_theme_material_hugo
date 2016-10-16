@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {{ .Hugo.Generator }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
+    <script type="text/javascript" src="/js/trunk8.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/prism.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection"/>
+    {{ if eq .URL "/" }}
+    <title>{{ .Title }}</title>
+    <meta property='og:title' content="{{ .Title }}">
+    <meta property="og:type" content="website">
+    {{ else }}
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:type" content="article">
+    {{ end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ with .Description }}
+    <meta name="description" content="{{ . }}">
+    {{ end }}
+    {{ with .Site.Params.ogimage }}
+    <meta property="og:image" content="{{ $.Site.BaseURL }}img/{{ . }}">
+    {{ end }}
+    {{ with .Site.Params.googleSiteVerifiationCode }}
+    <meta name="google-site-verification" content="{{ . }}">
+    {{ end }}
+</head>
+<body>
+<header class="site">
+    <nav>
+        <a href="{{ .Site.BaseURL }}" class="brand-logo logo-wide hide-on-med-and-down">{{ .Site.Title }}</a>
+        <a href="{{ .Site.BaseURL }}" class="brand-logo logo-short hide-on-large-only">{{ .Site.Title }}</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ .Site.BaseURL }}">HOME</a></li>
+            <li><a href="/page/author/">AUTHOR</a></li>
+        </ul>
+        <ul id="slide-out" class="side-nav">
+            <li><a href="{{ .Site.BaseURL }}">HOME</a></li>
+            <li><a href="/page/author/">AUTHOR</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse right"><i class="mdi-navigation-menu left"></i></a>
+    </nav>
+</header>
+<script>
+    $('.button-collapse').sideNav({
+                edge: 'right'
+            }
+    );
+</script>
+<main>

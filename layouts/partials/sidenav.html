@@ -1,0 +1,10 @@
+<section>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      <h2>{{ $taxonomyname }}</h2>
+      <ul>
+      {{ range $key, $value := $taxonomy }}
+      <li><a href="/{{ $taxonomyname }}/{{ $key }}/">{{ $key }}</a></li>
+      {{ end }}
+      </ul>
+    {{ end }}
+</section>

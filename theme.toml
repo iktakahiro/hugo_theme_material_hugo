@@ -1,0 +1,16 @@
+name = "Material Hugo"
+license = "MIT"
+licenselink = ""
+description = "Material Hugo is a Material Design Teme for Hugo"
+tags = ["blog"]
+features = ["blog"]
+min_version = 0.17
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[author]
+    name = "Takahiro Ikeuchi @iktakahiro"
+    homepage = "https://librabuch.jp"
+

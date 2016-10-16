@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+<div class="row">
+    <div class="col l8 offset-l1">
+        <div class="article-header">
+            <h1 class="article-title">{{ .Title }}</h1>
+            <div class="row">
+                <p class="col">
+                    <i class="material-icons left">today</i>
+                {{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "2006-01-02 Mon"}}{{ end }}
+                </p>
+                <p class="col">
+                    <i class="material-icons left">person</i>
+                    {{ $.Site.Params.author }}
+                </p>
+            </div>
+        </div>
+        {{ partial "socialshare.html" . }}
+        <div class="article-body">
+            {{ .Content }}
+        </div>
+        {{ partial "socialshare.html" . }}
+    </div>
+    <div class="col l3">
+        {{ partial "sidenav.html" . }}
+    </div>
+</div>
+{{ partial "footer.html" . }}
+
