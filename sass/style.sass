@@ -5,7 +5,6 @@
 @import "./materialize/sass/materialize"
 
 $base_font-weight: 200
-$base_font-size: 120%
 $base_font-family: "Open Sans", "Hiragino Sans", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "MS PGothic", sans-serif
 $heading-list: (h1: 2.5rem, h2:2rem, h3: 1.75rem, h4: 1.5rem, h5: 1.25rem, h6:1rem)
 
@@ -13,6 +12,7 @@ body
   font:
     family: $base_font-family
     weight: $base_font-weight
+    size: 16px
 
 @each $key, $value in $heading-list
   #{$key}
@@ -88,3 +88,4 @@ div.social-share
   div#facebook, div#twitter
     display: inline-block
     vertical-align: top
+
