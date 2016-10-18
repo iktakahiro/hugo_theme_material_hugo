@@ -24,11 +24,13 @@
              </ul>
          </div>
      </div>
-     <div class="footer-copyright">
-          {{ with .Site.Copyright | safeHTML }}{{ . }}
-          {{ else }}&copy; {{ $.Site.LastChange.Year }} {{ with .Site.Params.author }}{{ . }}{{ end }}
-          {{ end }}
-            - Powered by <a class="grey-text text-lighten-4" href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme is <a href="https://github.com/iktakahiro/hugo_theme_material_hugo" class="grey-text text-lighten-4" target="_blank" rel="nofollow">Material Hugo</a>
+</div>
+<div class="footer-copyright">
+    <div class="container">
+    {{ with .Site.Copyright | safeHTML }}{{ . }}
+    {{ else }}&copy; {{ $.Site.LastChange.Year }} {{ with .Site.Params.author }}{{ . }}{{ end }}
+    {{ end }}
+    - Powered by <a class="grey-text text-lighten-4" href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>.
     </div>
 </div>
 </footer>

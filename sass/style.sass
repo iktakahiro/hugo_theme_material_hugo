@@ -13,7 +13,6 @@ body
   font:
     family: $base_font-family
     weight: $base_font-weight
-// color: color("grey", "darken-4")
 
 @each $key, $value in $heading-list
   #{$key}
@@ -21,10 +20,6 @@ body
       size: #{$value}
       weight: $base_font-weight
       margin: 1em 0
-
-header
-  a.logo-wide
-    margin-left: 20px
 
 main
   ul, ol, p
@@ -50,11 +45,6 @@ main
 
   div.article-body
     margin-bottom: 30px
-  div.ad-top
-    margin: 25px 0 0
-
-  div.ad-bottom
-    margin: 10px 0 25px
 
   h2.taxonomy
     margin-left: 20px
@@ -93,12 +83,8 @@ div.social-share
   margin: 15px 0 30px
 
   div#twitter
-    margin-top: 1.8px
+    margin-top: 3px
 
-  div#hatena
-    margin-top: 1.8px
-
-  div#facebook, div#twitter, div#hatena
+  div#facebook, div#twitter
     display: inline-block
     vertical-align: top
-    margin-right: 4.5px
