@@ -1,0 +1,17 @@
+{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+<hr>
+<div class="section pagenate center-align">
+
+    {{ if .Paginator.HasPrev }}
+    <a class="prev waves-effect waves-light btn grey lighten-4 grey-text text-darken-4" href="{{ .Paginator.Prev.URL }}"><i class="material-icons left">keyboard_arrow_left</i>PREV</a>
+
+    {{ end }}
+
+    {{ if .Paginator.HasNext }}
+    <a class="next waves-effect waves-light btn grey lighten-4 grey-text text-darken-4" href="{{ .Paginator.Next.URL }}"><i class="material-icons right">keyboard_arrow_right</i>NEXT</a>
+
+    {{ end }}
+</div>
+{{ end }}
+
+

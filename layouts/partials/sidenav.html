@@ -1,0 +1,7 @@
+<section>
+    <ul id="slide-out" class="side-nav">
+    {{ range where .Site.Pages "Section" "page" }}
+        <li><a class="waves-effect" href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+    </ul>
+</section>

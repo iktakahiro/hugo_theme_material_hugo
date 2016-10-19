@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {{ .Hugo.Generator }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/prism.css" media="screen,projection"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/prism.js"></script>
+    <script type="text/javascript" src="/js/trunk8.min.js"></script>
+    {{ if eq .URL "/" }}
+    <title>{{ .Title }}</title>
+    <meta property='og:title' content="{{ .Title }}">
+    <meta property="og:type" content="website">
+    {{ else }}
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:type" content="article">
+    {{ end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ with .Description }}
+    <meta name="description" content="{{ . }}">
+    {{ end }}
+    {{ with .Site.Params.ogimage }}
+    <meta property="og:image" content="{{ $.Site.BaseURL }}img/{{ . }}">
+    {{ end }}
+    {{ with .Site.Params.googlesiteverificationcode }}
+    <meta name="google-site-verification" content="{{ . }}">
+    {{ end }}
+</head>
+<body>
+<header>
+    <nav>
+    <div class="nav-wrapper">
+        <a href="{{ .Site.BaseURL }}" class="brand-logo center">{{ .Site.Title }}</a>
+
+        {{ partial "sidenav.html" . }}
+
+        <a href="#" data-activates="slide-out" class="js-button-collapse right show-on-large">
+          <i class="material-icons left">menu</i>
+        </a>
+    </div>
+    </nav>
+</header>
+<script>
+    $('.js-button-collapse').sideNav({
+                edge: "right"
+            }
+    );
+</script>
+<main>

@@ -1,0 +1,42 @@
+{{ partial "header.html" . }}
+<div class="row">
+    <div class="col l8 offset-l1 m10 offset-m1 s12">
+        <div class="article-header">
+            <h1 class="article-title">{{ .Title }}</h1>
+            <div class="row">
+                <p class="col">
+                    <i class="material-icons left">today</i>
+                {{ with .Site.Params.date_format }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "2006-01-02 Mon"}}{{ end }}
+                </p>
+                <p class="col">
+                    <i class="material-icons left">person</i>
+                    {{ $.Site.Params.author }}
+                </p>
+                <p class="col">
+                    {{ if .Params.categories }}
+                    <i class="material-icons left">folder_open</i>
+                    {{ range $index, $category := .Params.categories }}
+                        {{ if gt $index 0 }} | {{ end }}<a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+                    {{ end }}
+                </p>
+                <p class="col">
+                    {{ if .Params.tags }}
+                    <i class="material-icons left">local_offer</i>
+                    {{ range $index, $tag := .Params.tags }}
+                        {{ if gt $index 0 }} | {{ end }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+                    {{ end }}
+                </p>
+            </div>
+        </div>
+        {{ partial "socialshare.html" . }}
+        <div class="article-body">
+            {{ .Content }}
+        </div>
+        {{ partial "socialshare.html" . }}
+    </div>
+    <div class="col l3 offset-m1 s12">
+        {{ partial "sidenav.html" . }}
+    </div>
+</div>
+{{ partial "footer.html" . }}
+
