@@ -2,12 +2,14 @@
     <div class="card white hoverable">
         <div class="card-content">
             <span class="card-title"><i class="material-icons small left grey-text text-darken-2">bookmark</i><a href="{{ .Permalink }}">{{ .Title }}</a></span>
-            <p class="summary">{{ .Summary }}</p>
+            <p class="summary">
+            {{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}
+            </p>
         </div>
         <div class="card-action">
             <div class="left-align row">
             <i class="material-icons left">today</i>
-                {{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "2006-01-02 Mon"}}{{ end }}
+                {{ with .Site.Params.date_format }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "2006-01-02 Mon"}}{{ end }}
             </div>
             <div class="center-align">
                 <a href="{{ .Permalink }}" class="waves-effect waves-light btn"><i class="material-icons right">open_in_new</i>READ</a>

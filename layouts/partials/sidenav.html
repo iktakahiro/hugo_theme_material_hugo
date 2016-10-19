@@ -1,10 +1,7 @@
 <section>
-    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-      <h2>{{ $taxonomyname }}</h2>
-      <ul>
-      {{ range $key, $value := $taxonomy }}
-      <li><a href="/{{ $taxonomyname }}/{{ $key }}/">{{ $key }}</a></li>
-      {{ end }}
-      </ul>
+    <ul id="slide-out" class="side-nav">
+    {{ range where .Site.Pages "Section" "page" }}
+        <li><a class="waves-effect" href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
+    </ul>
 </section>
